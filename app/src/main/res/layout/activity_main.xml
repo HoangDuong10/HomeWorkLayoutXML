@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray">
+
+    <ImageView
+        android:layout_margin="@dimen/define_dimen_8"
+        android:id="@+id/ivBanner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white" />
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/define_dimen_12"
+        android:layout_marginBottom="@dimen/define_dimen_8"
+        android:text="Chiến dịch livestream 22/07/2024"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_xnormal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/ivBack" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/define_dimen_12"
+        android:layout_marginBottom="@dimen/define_dimen_12"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBanner"
+        app:layout_constraintStart_toEndOf="@+id/ivBack">
+
+        <ImageView
+            android:id="@+id/iconVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="null"
+            android:src="@drawable/ic_visibility"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_4"
+            android:text="18K"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_normal" />
+
+        <ImageView
+            android:id="@+id/iconThumbUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_12"
+            android:contentDescription="null"
+            android:src="@drawable/ic_thumb_up"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textThumbUp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/define_dimen_4"
+            android:text="14,5K"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_normal" />
+
+        <!-- Comment Icon and Text -->
+        <ImageView
+            android:id="@+id/iconComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_12"
+            android:contentDescription="null"
+            android:src="@drawable/ic_comment"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_4"
+            android:text="18K"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_marginHorizontal="@dimen/define_dimen_8"
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBanner"
+        app:tabIndicatorColor="@color/green"
+        app:tabIndicatorHeight="1dp"
+        app:tabMode="fixed"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="@color/green"
+        app:tabTextColor="@color/black"/>
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_marginStart="@dimen/define_dimen_8"
+        android:layout_marginEnd="@dimen/define_dimen_8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
